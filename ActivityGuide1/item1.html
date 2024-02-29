@@ -5,66 +5,135 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Activity #1</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+                background-image: url('https://getwallpapers.com/wallpaper/full/e/f/3/1396183-spongebob-backgrounds-1920x1080-720p.jpg'); 
+                background-size: cover;
+                background-position: center; 
+                padding-top: 20px; 
+                padding-bottom: 20px; 
+            }
+            .container {
+                background-color: rgba(255, 255, 255, 0.9); 
+                padding: 20px; 
+                border-radius: 10px; 
+            }
+        </style>
     </head>
     
     <body>
-        <h1>Activity Guide #1</h1>
-    
-        <h3>Item #1</h3>
-        Name: <input type="text" id="name"><br /><br />
-        Address: <input type="text" id="address"><br /><br />
-        Telephone: <input type="text" id="telephone"><br /><br />
-        Major: <input type="text" id="major"><br /><br />
-        <button id="btn1">Submit</button>
-        <p id="output1"></p>
-        <hr>
-        <h3>Item 2</h3>
-        Enter your projected Total Sales. <br><br>
-        Total Sales: <input type="number" id="tot"><br><br>
-        <button id="btn2">Submit</button>
-        <p id="output2"></p>
-        <hr>
+        <div class="container">
+            <h1 class="mt-5 mb-4 text-center">Activity Guide #1</h1>
+        
+            <div class="mb-4">
+                <h3>Item 1</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input type="text" class="form-control" id="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Telephone:</label>
+                        <input type="text" class="form-control" id="telephone">
+                    </div>
+                    <div class="form-group">
+                        <label for="major">Major:</label>
+                        <input type="text" class="form-control" id="major">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn1">Submit</button>
+                </form>
+                <p id="output1" class="mt-2"></p>
+            </div>
+            <hr>
+        
+            <div class="mb-4">
+                <h3>Item 2</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="tot">Enter your projected Total Sales:</label>
+                        <input type="number" class="form-control" id="tot">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn2">Submit</button>
+                </form>
+                <p id="output2" class="mt-2"></p>
+            </div>
+            <hr>
 
-        <h3>Item 3</h3>
-        For 60 miles, how many hours will you travel?<br><br>
-        <button id="btn3">5 Hours</button>
-        <button id="btn4">8 Hours</button>
-        <button id="btn5">12 Hours</button>
-        <p id="output3"></p>
-        <hr>
+            <div class="mb-4">
+                <h3>Item 3</h3>
+                <button type="button" class="btn btn-primary" id="btn3">5 Hours</button>
+                <button type="button" class="btn btn-primary" id="btn4">8 Hours</button>
+                <button type="button" class="btn btn-primary" id="btn5">12 Hours</button>
+                <p id="output3" class="mt-2"></p>
+            </div>
+            <hr>
+            
+            <div class="mb-4">
+                <h3>Item 4</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="mil">How many miles have you driven?</label>
+                        <input type="number" class="form-control" id="mil">
+                    </div>
+                    <div class="form-group">
+                        <label for="gas">How many gallons of gas have you used?</label>
+                        <input type="number" class="form-control" id="gas">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn6">Submit</button>
+                </form>
+                <p id="output4" class="mt-2"></p>
+            </div>
+            <hr>
+            
+            <div class="mb-4">
+                <h3>Item 5</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="cel">Enter a temperature in Celsius:</label>
+                        <input type="number" class="form-control" id="cel">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn7">Submit</button>
+                </form>
+                <p id="output5" class="mt-2"></p>
+            </div>
+            <hr>
+            
+            <div class="mb-4">
+                <h3>Item 6</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="coo">How many cookies have you eaten?</label>
+                        <input type="number" class="form-control" id="coo">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn8">Submit</button>
+                </form>
+                <p id="output6" class="mt-2"></p>
+            </div>
+            <hr>
+            
+            <div class="mb-4">
+                <h3>Item 7</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="male">How many males are in the class?</label>
+                        <input type="number" class="form-control" id="male">
+                    </div>
+                    <div class="form-group">
+                        <label for="fem">How many females are in the class?</label>
+                        <input type="number" class="form-control" id="fem">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn9">Submit</button>
+                </form>
+                <p id="output7" class="mt-2"></p>
+            </div>
+            <hr>
 
-        <h3>Item 4</h3>
-        How many miles have you drive?<br><br>
-        Miles: <input type="number" id="mil"><br><br>
-        How many gallons of gas have you used?<br><br>
-        Gallons of Gas: <input type="number" id="gas"><br><br>
-        <button id="btn6">Submit</button>
-        <p id="output4"></p>
-        <hr>
-
-        <h3>Item 5</h3>
-        Enter a temperature in Celsius.<br><br>
-        Celsius: <input type="number" id="cel"><br><br>
-        <button id="btn7">Submit</button>
-        <p id="output5"></p>
-        <hr>
-
-        <h3>Item 6</h3>
-        How many cookies have you eaten?<br><br>
-        Cookies: <input type="number" id="coo"><br><br>
-        <button id="btn8">Submit</button>
-        <p id="output6"></p>
-        <hr>
-
-        <h3>Item 7</h3>
-        How many males are in the class?<br><br>
-        Male/s: <input type="number" id="male"><br><br>
-        How many females are in the class?<br><br>
-        Female/s: <input type="number" id="fem"><br><br>
-        <button id="btn9">Submit</button>
-        <p id="output7"></p>
-        <hr>
-
-    <script src="app.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="app.js"></script>
 </body>
 </html>
