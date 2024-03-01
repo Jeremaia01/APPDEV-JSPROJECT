@@ -1,12 +1,10 @@
 const btn1 = document.getElementById("btn1")
 btn1.addEventListener("click", () => {
-    //get input from text box id
     let name = document.getElementById("name").value
     let address = document.getElementById("address").value
     let telephone = document.getElementById("telephone").value
     let major = document.getElementById("major").value
 
-    //displaying the output
     let x = `
     Hello! ${name}, I see that you are from ${address} and you are pursuing ${major} and you can be contacted using ${telephone}
     `
