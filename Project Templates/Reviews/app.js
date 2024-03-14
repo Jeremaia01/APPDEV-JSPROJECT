@@ -65,7 +65,7 @@ const reviews = [
   })
 
   randomBtn.addEventListener('click', ()=>{
-    currentItem=randomBtn()
+    currentItem=randomNum()
     showPerson(currentItem)
   })
 
