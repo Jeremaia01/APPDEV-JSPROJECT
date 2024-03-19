@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeLab</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel ="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        #pokemonList {
+            list-style-type: none;
+            padding: 0;
+        }
+        .pokemon-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-center">
+            <!-- header -->
+            <div class="nav-header">
+                <button class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <!-- links -->
+            <ul class="links">
+                <li>
+                <a href="item1.html">home</a>
+                </li>
+                <li>
+                <a href="pokemon.html">Pokemon</a>
+                </li>
+                <li>
+                <a href="region.html">Region</a>
+                </li>
+                <li>
+                    <a href="questions.html">questions</a>
+                </li>
+            </ul>
+            <!-- social media -->
+            <ul class="social-icons">
+                <li>
+                <a href="https://www.twitter.com">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                </li>
+                <li>
+                <a href="https://www.twitter.com">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                </li>
+                <li>
+                <a href="https://www.twitter.com">
+                    <i class="fab fa-behance"></i>
+                </a>
+                </li>
+                <li>
+                <a href="https://www.twitter.com">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                </li>
+                <li>
+                <a href="https://www.twitter.com">
+                    <i class="fab fa-sketch"></i>
+                </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Pokemon Habitat Info</h1>
+        <label for="habitat">Select Habitat:</label>
+        <select id="habitat">
+            <!-- Placeholder option -->
+            <option value="all">All Habitats</option>
+        </select>
+        <button onclick="fetchPokemonData()">Get Pokemon in Habitat</button>
+        <ul id="pokemonList"></ul>
+    </div>
+
+    <script src="item1.js"></script>
+</body>
+</html>

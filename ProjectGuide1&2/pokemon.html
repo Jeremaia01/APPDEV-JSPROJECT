@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeLab</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f3f4f6; /* Added background color */
+            background-image: url('https://getwallpapers.com/wallpaper/full/6/a/d/763042-download-best-pokemon-wallpapers-2880x1800-for-ipad.jpg'); /* Add your background image URL here */
+            background-size: cover; /* Ensure the background covers the entire viewport */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed; /* Ensures that the background image does not scroll with the page */
+        }
+
+
+        .pokemon {
+            display: inline-block;
+            margin: 10px;
+            width: 18%; /* Adjusted width to accommodate five Pokémon per line */
+        }
+        .pokemon img {
+            width: 100%; /* Make the image fill the container */
+            max-width: 150px; /* Set a maximum width for the image */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .pokemon p {
+            text-transform: capitalize; /* Capitalize the first letter of each word */
+            color: white;
+        }
+
+        /* Button styling */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px; /* Adjust as needed */
+        }
+
+        .button-container button {
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 0px;
+            width: 200px;
+            height: 40px;
+            position: relative;
+            transition: 0.3s;
+            overflow: hidden;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            margin: 5px;
+            color: #ffffff; /* Default text color */
+        }
+        .button-container button::before, .button-container button::after {
+            content: "";
+            display: block;
+            height: 2px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            transition: .3s;
+        }
+        .button-container button:hover::before,
+        .button-container button.all:hover::before {
+            transform: translateX(-100%);
+            background-color: rgba(255, 255, 255, 0.562);
+        }
+        .button-container button:hover::after,
+        .button-container button.all:hover::after {
+            transform: translateX(100%);
+            background-color: rgb(255, 255, 255);
+        }
+        .button-container button:hover::before,
+        .button-container button.fire:hover::before {
+            transform: translateX(-100%);
+            background-color: red; /* Fire type button color */
+        }
+        .button-container button:hover::after,
+        .button-container button.fire:hover::after {
+            transform: translateX(100%);
+            background-color: red; /* Fire type button color */
+        }
+        .button-container button.water:hover::before {
+            transform: translateX(-100%);
+            background-color: blue; /* Water type button color */
+        }
+        .button-container button.water:hover::after {
+            transform: translateX(100%);
+            background-color: blue; /* Water type button color */
+        }
+        .button-container button.grass:hover::before {
+            transform: translateX(-100%);
+            background-color: green; /* Grass type button color */
+        }
+        .button-container button.grass:hover::after {
+            transform: translateX(100%);
+            background-color: green; /* Grass type button color */
+        }
+        .button-container button.electric:hover::before {
+            transform: translateX(-100%);
+            background-color: yellow; /* Electric type button color */
+        }
+        .button-container button.electric:hover::after {
+            transform: translateX(100%);
+            background-color: yellow; /* Electric type button color */
+        }
+        .button-container button.normal:hover::before {
+            transform: translateX(-100%);
+            background-color: gray; /* Normal type button color */
+        }
+        .button-container button.normal:hover::after {
+            transform: translateX(100%);
+            background-color: gray; /* Normal type button color */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-center">
+            <!-- header -->
+            <div class="nav-header">
+                <button class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <!-- links -->
+            <ul class="links">
+                <li>
+                <a href="item1.html">home</a>
+                </li>
+                <li>
+                <a href="pokemon.html">Pokemon</a>
+                </li>
+                <li>
+                <a href="region.html">Region</a>
+                </li>
+                <li>
+                    <a href="questions.html">questions</a>
+                </li>
+            </ul>
+            <!-- social media -->
+            <ul class="social-icons">
+                <li>
+                <a href="https://www.twitter.com">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                </li>
+                <li>
+                <a href="https://www.twitter.com">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                </li>
+                <li>
+                <a href="https://www.twitter.com">
+                    <i class="fab fa-behance"></i>
+                </a>
+                </li>
+                <li>
+                <a href="https://www.twitter.com">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                </li>
+                <li>
+                <a href="https://www.twitter.com">
+                    <i class="fab fa-sketch"></i>
+                </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="button-container">
+        <button class="all" onclick="getAllPokemons()">All Pokémon</button>
+        <button class="fire" onclick="getPokemonsByType('fire')">Fire</button>
+        <button class="water" onclick="getPokemonsByType('water')">Water</button>
+        <button class="grass" onclick="getPokemonsByType('grass')">Grass</button>
+        <button class="electric" onclick="getPokemonsByType('electric')">Electric</button>
+        <button class="normal" onclick="getPokemonsByType('normal')">Normal</button>
+    </div>
+    <div id="pokemonList"></div>
+    
+    
+    <script src="item1.js"></script>
+</body>
+</html>
