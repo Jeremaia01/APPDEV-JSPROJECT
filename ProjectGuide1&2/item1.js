@@ -1,74 +1,3 @@
-// Function to fetch all habitats and populate the dropdown
-    function fetchAllHabitats() {
-        const apiUrl = 'https://pokeapi.co/api/v2/pokemon-habitat/';
-        
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                populateHabitatDropdown(data);
-            })
-            .catch(error => {
-                console.error('There was a problem with your fetch operation:', error);
-                alert('Failed to fetch data. Please try again.');
-            });
-    }
-
-    // Function to populate the habitat dropdown with options
-    function populateHabitatDropdown(data) {
-        const habitatDropdown = document.getElementById('habitat');
-
-        // Add individual habitats
-        data.results.forEach(habitat => {
-            const option = document.createElement('option');
-            option.value = habitat.name;
-            option.textContent = habitat.name;
-            habitatDropdown.appendChild(option);
-        });
-    }
-
-    // Function to fetch Pokemon data based on selected habitat
-    function fetchPokemonData() {
-        const selectedHabitat = document.getElementById('habitat').value.trim().toLowerCase();
-
-        // Construct the API URL based on the selected habitat
-        let apiUrl = 'https://pokeapi.co/api/v2/pokemon-habitat/';
-        if (selectedHabitat !== 'all') {
-            apiUrl += selectedHabitat + '/';
-        }
-
-        fetch(apiUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                displayPokemonData(data);
-            })
-            .catch(error => {
-                console.error('There was a problem with your fetch operation:', error);
-                alert('Failed to fetch data. Please try again.');
-            });
-    }
-
-    // Function to display Pokemon data in the list
-    function displayPokemonData(data) {
-        const pokemonListElement = document.getElementById('pokemonList');
-        pokemonListElement.innerHTML = '';
-
-        data.pokemon_species.forEach(pokemon => {
-            const listItem = document.createElement('li');
-            listItem.className = 'pokemon-item';
-            listItem.textContent = pokemon.name;
-            pokemonListElement.appendChild(listItem);
-        });
-    }
-
-    // Load all habitats when the window loads
-    window.onload = function() {
-        fetchAllHabitats();
-    };
 
     // navbar
     const navTog = document.querySelector('.nav-toggle');
@@ -125,3 +54,17 @@
     window.onload = function() {
         getAllPokemons();
     };
+    const questions = document.querySelectorAll('.question')
+    questions.forEach((question) => {
+        console.log(question)
+        const btn = question.querySelector('.question-btn')
+        // btn event
+        btn.addEventListener('click', ()=>{
+            questions.forEach((item) => {
+                if(item !== question){
+                    item.classList.remove('show-text')
+                }
+            })
+            question.classList.toggle('show-text')
+        })
+    })

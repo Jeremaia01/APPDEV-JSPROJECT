@@ -3,35 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeLab</title>
+    <title>Pokemon Hub</title>
     <link rel="stylesheet" href="styles.css">
     <link rel ="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .vision-mission {
+        display: flex;
+        justify-content: space-between;
+        max-width: 800px; 
+        width: 100%;
+    }
+
+    .vision,
+    .mission {
+        width: calc(50% - 10px); 
+        background-color: var(--clr-white);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow: var(--light-shadow);
+    }
+
+    .vision h2,
+    .mission h2 {
+        color: var(--clr-primary-5);
+        margin-bottom: 0.5rem;
+    }
+
+    .vision p,
+    .mission p {
+        margin-top: 0.5rem;
+    }
+
+    </style>
 </head>
 <body>
     <nav>
         <div class="nav-center">
-            <!-- header -->
             <div class="nav-header">
                 <button class="nav-toggle">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
-            <!-- links -->
             <ul class="links">
                 <li>
-                <a href="item1.html">home</a>
+                <a href="#home">home</a>
                 </li>
                 <li>
-                <a href="pokemon.html">Pokemon</a>
+                <a href="#poke">Pokemon</a>
                 </li>
                 <li>
-                <a href="region.html">Region</a>
+                <a href="#rev">Reviews</a>
                 </li>
                 <li>
-                    <a href="questions.html">questions</a>
+                <a href="#quest">questions</a>
                 </li>
             </ul>
-            <!-- social media -->
             <ul class="social-icons">
                 <li>
                 <a href="https://www.twitter.com">
@@ -61,16 +93,206 @@
             </ul>
         </div>
     </nav>
+    <section id="home">
     <main class="home">
-        <p class="vission"> 
-            <h2>Vission</h2> 
-            "Our vision is to create the premier online destination for Pokémon fans worldwide, offering dynamic content and interactive experiences. We aim to unite trainers of all ages, fostering creativity, exploration, and community engagement. Through our dedication to excellence and passion for the Pokémon universe, we inspire fans to embark on their journey to become true Pokémon Masters."</p>
-        <p class="mission">
-            <h2>Mission</h2>
-            "Our mission at [Website Name] is to cultivate a vibrant online community for Pokémon enthusiasts of all ages. We strive to celebrate Pokémon culture, foster community engagement, and provide a safe, innovative platform for fans to connect, learn, and express their creativity. Through curated content, interactive features, and inclusive spaces, we aim to empower trainers on their journey to becoming Pokémon masters."
-        </p>
+        <div class="container">
+            <div class="vision-mission">
+                <div class="vision">
+                    <h2>Vision</h2>
+                    <p>Our vision is to create the premier online destination for Pokémon fans worldwide, offering dynamic content and interactive experiences. We aim to unite trainers of all ages, fostering creativity, exploration, and community engagement. Through our dedication to excellence and passion for the Pokémon universe, we inspire fans to embark on their journey to become true Pokémon Masters.</p>
+                </div>
+                <div class="mission">
+                    <h2>Mission</h2>
+                    <p>Our mission at PokeLab is to cultivate a vibrant online community for Pokémon enthusiasts of all ages. We strive to celebrate Pokémon culture, foster community engagement, and provide a safe, innovative platform for fans to connect, learn, and express their creativity. Through curated content, interactive features, and inclusive spaces, we aim to empower trainers on their journey to becoming Pokémon masters.</p>
+                </div>
+            </div>
+        </div>
     </main>
+    </section>
+    <br><br><br>
+    <section id="poke">
+        <h2>Pokemon</h2>
+        <div class="button-container">
+            <button class="all" onclick="getAllPokemons()">All Pokémon</button>
+            <button class="fire" onclick="getPokemonsByType('fire')">Fire</button>
+            <button class="water" onclick="getPokemonsByType('water')">Water</button>
+            <button class="grass" onclick="getPokemonsByType('grass')">Grass</button>
+            <button class="electric" onclick="getPokemonsByType('electric')">Electric</button>
+            <button class="normal" onclick="getPokemonsByType('normal')">Normal</button>
+        </div>
+        <div id="pokemonList"></div>
+    </section>
+
     
+    <section id="rev">
+        <div class="cont">
+            <div class="mgb-40 padb-30 auto-invert line-b-4 align-center">
+                <h4 class="font-cond-l" contenteditable="false"></h4>
+                <h1 class="font-cond-b" contenteditable="false">Read Customer Reviews</h1>
+            </div>
+            <ul class="hash-list cols-3 cols-1-xs pad-30-all align-center text-sm">
+                <li>
+                  <img src="https://i.pinimg.com/736x/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.jpg" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
+                  <p class="fs-110 font-cond-l" contenteditable="false">" I stumbled upon this Pokémon website recently, and I'm so glad I did! The guides and tips have been incredibly helpful in improving my gameplay. The forums are lively, and I've already made some new friends who share my love for Pokémon."</p>
+                  <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">User: EeveeLover22</h5>
+                  <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Date: January 12, 2024</small>
+                </li>
+                <li>
+                  <img src="https://www.serebii.net/pokemonmasters/syncpairs/icons/allister.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
+                  <p class="fs-110 font-cond-l" contenteditable="false">"I've been visiting this Pokémon website for years, and it never fails to impress me. From detailed Pokédex entries to insightful articles on battling strategies, this site has everything a Pokémon enthusiast could ask for. Kudos to the team behind this fantastic resource! "</p><br>
+                  <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">User: CharizardMaster</h5>
+                  <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Date: April 22, 2023</small>
+                </li>
+                <li>
+                  <img src="https://www.serebii.net/pokemonmasters/syncpairs/icons/alder.png" class="wpx-100 img-round mgb-20" title="" alt="">
+                  <p class="fs-110 font-cond-l" contenteditable="false">" This website is a treasure trove for Pokémon fans! The content is engaging, the design is vibrant, and the community is welcoming. I can spend hours exploring all the information and resources available here. "</p><br><br>
+                  <h5 class="font-cond"">User: PikachuFan123</h5>
+                  <small class="font-cond">Date: March 22, 2024</small>
+                </li>
+              </ul>
+        </div>
+    </section>
+
+    <section id="quest">
+        <div class="title"><h2>Frequently Asked Questions</h2></div>
+    <div class="section-center">
+        <!-- single question -->
+        <article class="question">
+            <!-- question title -->
+            <div class="question-title">
+                <p>What is Pokémon?</p>
+                <button class="question-btn" type="button">
+                    <span class="plus-icon">
+                        <i class="fas fa-plus-square"></i>
+                    </span>
+                    <span class="minus-icon">
+                        <i class="fas fa-minus-square"></i>
+                    </span>
+                </button>
+            </div>
+            <!-- question text -->
+            <div class="question-text">
+                <p>Pokémon, short for "Pocket Monsters," is a media franchise created by Satoshi Tajiri and Ken Sugimori. It includes video games, trading card games, animated television series, movies, and various other merchandise.</p>
+            </div>
+        </article>
+
+
+        <article class="question">
+            <!-- question title -->
+            <div class="question-title">
+                <p>How many Pokémon are there?</p>
+                <button class="question-btn" type="button">
+                    <span class="plus-icon">
+                        <i class="fas fa-plus-square"></i>
+                    </span>
+                    <span class="minus-icon">
+                        <i class="fas fa-minus-square"></i>
+                    </span>
+                </button>
+            </div>
+            <!-- question text -->
+            <div class="question-text">
+                <p>As of the latest count, there are over 800 species of Pokémon. This number continues to grow with the release of new games and generations in the Pokémon series.</p>
+            </div>
+        </article>
+    
+
+    <article class="question">
+        <!-- question title -->
+        <div class="question-title">
+            <p>What are the different types of Pokémon?</p>
+            <button class="question-btn" type="button">
+                <span class="plus-icon">
+                    <i class="fas fa-plus-square"></i>
+                </span>
+                <span class="minus-icon">
+                    <i class="fas fa-minus-square"></i>
+                </span>
+            </button>
+        </div>
+        <!-- question text -->
+        <div class="question-text">
+            <p>Pokémon are categorized into various types based on their elemental properties. Some common types include Normal, Fire, Water, Grass, Electric, Psychic, Fighting, Flying, Ground, Rock, Ice, Bug, Ghost, and Dragon, among others.</p>
+        </div>
+    </article>
+
+    <article class="question">
+        <!-- question title -->
+        <div class="question-title">
+            <p>How do Pokémon evolve?</p>
+            <button class="question-btn" type="button">
+                <span class="plus-icon">
+                    <i class="fas fa-plus-square"></i>
+                </span>
+                <span class="minus-icon">
+                    <i class="fas fa-minus-square"></i>
+                </span>
+            </button>
+        </div>
+        <!-- question text -->
+        <div class="question-text">
+            <p> Pokémon evolve through various methods, including reaching a certain level, exposure to specific items, trading with another player, friendship level, time of day, or location-based conditions. Each Pokémon species has its unique evolution requirements.</p>
+        </div>
+    </article>
+
+    <article class="question">
+        <!-- question title -->
+        <div class="question-title">
+            <p>What are Legendary Pokémon?</p>
+            <button class="question-btn" type="button">
+                <span class="plus-icon">
+                    <i class="fas fa-plus-square"></i>
+                </span>
+                <span class="minus-icon">
+                    <i class="fas fa-minus-square"></i>
+                </span>
+            </button>
+        </div>
+        <!-- question text -->
+        <div class="question-text">
+            <p>Legendary Pokémon are rare and powerful creatures often associated with myths and legends within the Pokémon world. They typically have higher base stats and unique abilities compared to other Pokémon.</p>
+        </div>
+    </article>
+
+    <article class="question">
+        <!-- question title -->
+        <div class="question-title">
+            <p>What are the main objectives in Pokémon games?</p>
+            <button class="question-btn" type="button">
+                <span class="plus-icon">
+                    <i class="fas fa-plus-square"></i>
+                </span>
+                <span class="minus-icon">
+                    <i class="fas fa-minus-square"></i>
+                </span>
+            </button>
+        </div>
+        <!-- question text -->
+        <div class="question-text">
+            <p>The main objectives in Pokémon games usually involve capturing and training Pokémon to become stronger, battling other trainers, defeating gym leaders, and ultimately challenging the Pokémon League to become the Champion.</p>
+        </div>
+    </article>
+
+    <article class="question">
+        <!-- question title -->
+        <div class="question-title">
+            <p> Are there any Pokémon movies?</p>
+            <button class="question-btn" type="button">
+                <span class="plus-icon">
+                    <i class="fas fa-plus-square"></i>
+                </span>
+                <span class="minus-icon">
+                    <i class="fas fa-minus-square"></i>
+                </span>
+            </button>
+        </div>
+        <!-- question text -->
+        <div class="question-text">
+            <p>Yes, there are numerous Pokémon movies that accompany the animated television series. These movies often feature legendary Pokémon, special events, and unique storylines that expand the Pokémon universe.</p>
+        </div>
+    </article>
+    </div>
+    </section>
     <script src="item1.js"></script>
 </body>
 </html>

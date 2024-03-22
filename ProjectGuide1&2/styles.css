@@ -1,18 +1,3 @@
-/* 
-.container {
-    text-align: center;
-}
-
-#pokemonInfo {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-} */
-
-
-
 /*
 ===============
 Fonts
@@ -173,14 +158,21 @@ Navbar
 ===============
 */
 nav {
-  background: transparent;
+  position: fixed; /* Fixed position */
+  top: 0; /* Stick to the top */
+  left: 0; /* Stick to the left */
+  width: 100%; /* Take full width */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* Ensure it's above other content */
 }
+
 .nav-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
 }
+
 .nav-toggle {
   font-size: 1.5rem;
   color: var(--clr-primary-5);
@@ -189,15 +181,18 @@ nav {
   transition: var(--transition);
   cursor: pointer;
 }
+
 .nav-toggle:hover {
   color: var(--clr-primary-1);
   transform: rotate(90deg);
 }
+
 .logo {
   height: 40px;
 }
+
 .links a {
-  color: var(--clr-grey-3);
+  color: white;
   font-size: 1rem;
   text-transform: capitalize;
   letter-spacing: var(--spacing);
@@ -254,10 +249,254 @@ nav {
   }
   .social-icons a {
     margin: 0 0.5rem;
-    color: var(--clr-primary-5);
+    color: white;
     transition: var(--transition);
   }
   .social-icons a:hover {
     color: var(--clr-primary-7);
   }
+}
+/*
+=============== 
+Questions
+===============
+*/
+.title {
+  margin-top: 15vh;
+  margin-bottom: 4rem;
+}
+.title h2 {
+  color: var(--clr-gold);
+  font-family: "Great Vibes", cursive;
+  text-align: center;
+}
+.section-center {
+  max-width: var(--fixed-width);
+}
+.question {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  margin-bottom: 2rem;
+}
+.question-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+  padding-bottom: 1rem;
+}
+.question-title p {
+  margin-bottom: 0;
+  letter-spacing: var(--spacing);
+  color: var(--clr-grey-1);
+}
+.question-btn {
+  font-size: 1.5rem;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  color: var(--clr-gold);
+  transition: var(--transition);
+}
+.question-btn:hover {
+  transform: rotate(90deg);
+}
+.question-text {
+  padding: 1rem 0 1.5rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+.question-text p {
+  margin-bottom: 0;
+}
+/* hide text */
+.question-text {
+  display: none;
+}
+.show-text .question-text {
+  display: block;
+}
+.minus-icon {
+  display: none;
+}
+.show-text .minus-icon {
+  display: inline;
+}
+.show-text .plus-icon {
+  display: none;
+} 
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f3f4f6; 
+  /* background-image: url('https://getwallpapers.com/wallpaper/full/6/a/d/763042-download-best-pokemon-wallpapers-2880x1800-for-ipad.jpg');  */
+  background-size: cover; 
+  background-position: center;
+  background-attachment: fixed; 
+
+
+.pokemon {
+  display: inline-block;
+  margin: 10px;
+  width: 18%; /* Adjusted width to accommodate five Pokémon per line */
+}
+.pokemon img {
+  width: 100%; /* Make the image fill the container */
+  max-width: 150px; /* Set a maximum width for the image */
+  height: auto; /* Maintain aspect ratio */
+}
+.pokemon p {
+  text-transform: capitalize; /* Capitalize the first letter of each word */
+  color: rgb(0, 0, 0);
+}
+
+/* Button styling */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.button-container button {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 0px;
+  width: 200px;
+  height: 40px;
+  position: relative;
+  transition: 0.3s;
+  overflow: hidden;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 5px;
+  color: #000000; /* Default text color */
+}
+.button-container button::before, .button-container button::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  transition: .3s;
+}
+.button-container button:hover::before,
+.button-container button.all:hover::before {
+  transform: translateX(-100%);
+  background-color: rgba(255, 255, 255, 0.562);
+}
+.button-container button:hover::after,
+.button-container button.all:hover::after {
+  transform: translateX(100%);
+  background-color: rgb(255, 255, 255);
+}
+.button-container button:hover::before,
+.button-container button.fire:hover::before {
+  transform: translateX(-100%);
+  background-color: red; /* Fire type button color */
+}
+.button-container button:hover::after,
+.button-container button.fire:hover::after {
+  transform: translateX(100%);
+  background-color: red; /* Fire type button color */
+}
+.button-container button.water:hover::before {
+  transform: translateX(-100%);
+  background-color: blue; /* Water type button color */
+}
+.button-container button.water:hover::after {
+  transform: translateX(100%);
+  background-color: blue; /* Water type button color */
+}
+.button-container button.grass:hover::before {
+  transform: translateX(-100%);
+  background-color: green; /* Grass type button color */
+}
+.button-container button.grass:hover::after {
+  transform: translateX(100%);
+  background-color: green; /* Grass type button color */
+}
+.button-container button.electric:hover::before {
+  transform: translateX(-100%);
+  background-color: yellow; /* Electric type button color */
+}
+.button-container button.electric:hover::after {
+  transform: translateX(100%);
+  background-color: yellow; /* Electric type button color */
+}
+.button-container button.normal:hover::before {
+  transform: translateX(-100%);
+  background-color: gray; /* Normal type button color */
+}
+.button-container button.normal:hover::after {
+  transform: translateX(100%);
+  background-color: gray; /* Normal type button color */
+}
+
+.align-center {
+    text-align: center;
+}
+.hash-list {
+    display: block;
+    padding: 0;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px){
+    .hash-list.cols-3 > li:nth-last-child(-n+3) {
+        border-bottom: none;
+    }
+}
+@media (min-width: 768px){
+    .hash-list.cols-3 > li {
+        width: 33.3333%;
+    }
+}
+.hash-list > li {
+    display: block;
+    float: left;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.pad-30, .pad-30-all > * {
+    padding: 30px;
+}
+img {
+    border: 0;
+}
+.mgb-20, .mgb-20-all > * {
+    margin-bottom: 20px;
+}
+.wpx-100, .wpx-100-after:after {
+    width: 100px;
+}
+.img-round, .img-rel-round {
+    border-radius: 50%;
+}
+.padb-30, .padb-30-all > * {
+    padding-bottom: 30px;
+}
+
+.mgb-40, .mgb-40-all > * {
+    margin-bottom: 40px;
+}
+.align-center {
+    text-align: center;
+}
+[class*="line-b"] {
+    position: relative;
+    padding-bottom: 20px;
+    border-color: #E6AF2A;
+}
+.fg-text-d, .fg-hov-text-d:hover, .fg-active-text-d.active {
+    color: #222;
+}
+.font-cond-b {
+    font-weight: 700 !important;
 }
