@@ -1,20 +1,27 @@
-.person{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    padding: 10px;
-    border: 1px solid hsla(0, 0%, 50%, 0.8);
-    box-shadow: 5px 5px 10x hsla(0, 0, 0, 0.5);
-    border-radius: 5px;
-    margin-bottom: 20px;
+.list-category{
+    font-weight: bold;
+    font-size: 2.5em;
+    color: hsl(0, 0%, 20%);
     text-align: center;
-    display: inline-block;
+    margin-bottom: 20px;
+    border: 3px solid;
+    border-radius: 10px;
+    background-color: aquamarine;
 }
-.person p{
-    margin: 0;
+.list li{
+    font-size: 2em;
+    list-style: none;
+    padding: 2px;
+    margin: 10px;
+    border: 3px solid;
+    border-radius: 10px;
+    text-align: center;
+    background-color: gainsboro;
 }
-.person-picture{
-    max-width: 60%;
-    max-height: auto;
-    border-radius: 50%;
-    margin-bottom: 10px;
+.list li:hover{
+    color: hsl(0, 0%, 55%);
+    cursor: pointer;
+}
+footer{
+    text-align: center;
 }
